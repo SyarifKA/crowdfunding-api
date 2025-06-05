@@ -5,13 +5,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/SyarifKA/crowdfunding-api/lib"
 	"github.com/SyarifKA/crowdfunding-api/pkg/env"
 	"github.com/SyarifKA/crowdfunding-api/pkg/log"
+	"github.com/SyarifKA/crowdfunding-api/routers"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	defer lib.DB()
 	err := env.Init()
 	if err != nil {
 		log.Fatal(err)
@@ -34,4 +34,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// db := lib.DB()
+	// migrations.Run(db)
+	r := gin.Default()
+	routers.RoutersCombine(r)
+	r.Run("localhost:8888")
 }
