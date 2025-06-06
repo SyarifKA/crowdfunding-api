@@ -1,3 +1,0 @@
-time="2025-06-05T15:49:34+07:00" level=debug msg="db connect sukses!" environment=development go_version=go1.24.3
-time="2025-06-05T15:49:34+07:00" level=debug msg="get all users repository success" environment=development go_version=go1.24.3
-time="2025-06-05T15:49:34+07:00" level=debug msg="controller get users" environment=development go_version=go1.24.3

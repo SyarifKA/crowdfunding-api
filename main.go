@@ -5,6 +5,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/SyarifKA/crowdfunding-api/lib"
+	"github.com/SyarifKA/crowdfunding-api/migrations"
 	"github.com/SyarifKA/crowdfunding-api/pkg/env"
 	"github.com/SyarifKA/crowdfunding-api/pkg/log"
 	"github.com/SyarifKA/crowdfunding-api/routers"
@@ -34,8 +36,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// db := lib.DB()
-	// migrations.Run(db)
+	if os.Getenv("RUN_MIGRATION") == "true" {
+		db := lib.DB()
+		migrations.Run(db)
+	}
 	r := gin.Default()
 	routers.RoutersCombine(r)
 	r.Run("localhost:8888")
