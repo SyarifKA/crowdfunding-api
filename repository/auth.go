@@ -23,7 +23,7 @@ func FindAllUsers() ([]entity.User, error) {
 	return users, nil
 }
 
-func RegistUser(data dtos.RegistUser) (entity.RegistUser, error) {
+func RegistUser(data dtos.RegistUser) (entity.User, error) {
 	db := lib.DB()
 
 	id := uuid.New().String()
@@ -38,10 +38,10 @@ func RegistUser(data dtos.RegistUser) (entity.RegistUser, error) {
 	result := db.Select("id", "Name", "Email", "Password").Create(&user)
 	if result.Error != nil {
 		log.Error("Error create user:", result.Error)
-		return entity.RegistUser{}, result.Error
+		return entity.User{}, result.Error
 	}
 
-	dataUser := entity.RegistUser{
+	dataUser := entity.User{
 		Name:  user.Name,
 		Email: user.Email,
 	}

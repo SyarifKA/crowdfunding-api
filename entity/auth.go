@@ -1,11 +1,6 @@
 package entity
 
 type User struct {
-	Name  string
-	Email string
-}
-
-type RegistUser struct {
-	Name  string
-	Email string
+	Name  string `json:"name"`
+	Email string `json:"email"`
 }

@@ -48,6 +48,7 @@ type Config struct {
 
 func NewLogger(cfg *Config) (Logger, error) {
 	l := logrus.New()
+
 	if env.IsDevelopment() {
 		l.SetFormatter(&logrus.TextFormatter{})
 	}
@@ -84,7 +85,12 @@ func SetConfig(cfg *Config) error {
 		Compress:   true, // gzip
 	})
 
-	log.SetFormatter(cfg.Formatter)
+	log.SetFormatter(&logrus.TextFormatter{
+		FullTimestamp:   true,
+		TimestampFormat: "2006-01-02 15:04:05.000",
+	})
+
+	// log.SetFormatter(cfg.Formatter)
 	log.SetLevel(cfg.Level)
 	return nil
 }
