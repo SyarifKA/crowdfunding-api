@@ -1,8 +1,0 @@
-time="2025-06-09 10:20:57.406" level=debug msg="db connect sukses!" environment=development go_version=go1.24.3
-time="2025-06-09 10:20:57.414" level=debug msg="Registration success!" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:15.137" level=debug msg="db connect sukses!" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:15.139" level=debug msg="get all users repository success" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:15.139" level=debug msg="controller get users" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:32.274" level=debug msg="db connect sukses!" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:32.277" level=debug msg="get all users repository success" environment=development go_version=go1.24.3
-time="2025-06-09 10:21:32.280" level=debug msg="controller get users" environment=development go_version=go1.24.3
