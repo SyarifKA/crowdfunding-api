@@ -1,0 +1,1 @@
+time="2025-06-10 08:59:41.303" level=info msg="Find all users" headers="map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Connection:[keep-alive] Postman-Token:[307dce4d-7e54-4432-abf5-27515380a815] User-Agent:[PostmanRuntime/7.44.0]]" ip=127.0.0.1 method=GET path=/users

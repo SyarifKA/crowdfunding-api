@@ -9,7 +9,6 @@ import (
 	"github.com/SyarifKA/crowdfunding-api/pkg/log"
 	"github.com/SyarifKA/crowdfunding-api/routers"
 	"github.com/gin-gonic/gin"
-	"github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -52,17 +51,7 @@ func main() {
 		migrations.Run(db)
 	}
 
-	r.Use(func(c *gin.Context) {
-		log.RotateLogIfNeeded()
-
-		log.Logger.WithFields(logrus.Fields{
-			"method": c.Request.Method,
-			"path":   c.Request.URL.Path,
-			"ip":     c.ClientIP(),
-		}).Info("Incoming request")
-
-		c.Next()
-	})
+	// r.Use(middlewares.LogMiddlware)
 	routers.RoutersCombine(r)
 	r.Run("localhost:8888")
 }
